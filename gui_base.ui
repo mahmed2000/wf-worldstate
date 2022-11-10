@@ -218,7 +218,7 @@
                 <property name="widgetResizable">
                  <bool>true</bool>
                 </property>
-                <widget class="QWidget" name="scrollAreaWidgetContents">
+                <widget class="QWidget" name="FissureHolder">
                  <property name="geometry">
                   <rect>
                    <x>0</x>
@@ -227,7 +227,7 @@
                    <height>449</height>
                   </rect>
                  </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_6">
+                 <layout class="QVBoxLayout" name="FissureList">
                   <item>
                    <widget class="Fissure" name="Fissure" native="true">
                     <property name="sizePolicy">
@@ -276,7 +276,7 @@
                 <property name="widgetResizable">
                  <bool>true</bool>
                 </property>
-                <widget class="QWidget" name="scrollAreaWidgetContents_2">
+                <widget class="QWidget" name="InvasionHolder">
                  <property name="geometry">
                   <rect>
                    <x>0</x>
@@ -285,7 +285,7 @@
                    <height>449</height>
                   </rect>
                  </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_8">
+                 <layout class="QVBoxLayout" name="InvasionList">
                   <item>
                    <widget class="Invasion" name="Invasion" native="true">
                     <property name="sizePolicy">
@@ -529,7 +529,7 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QStackedWidget" name="stackedWidget">
+                  <widget class="QStackedWidget" name="ArbitrationTabs">
                    <widget class="QWidget" name="ArbitrationNA">
                     <layout class="QHBoxLayout" name="horizontalLayout_3">
                      <item>
@@ -607,7 +607,7 @@
                    <property name="widgetResizable">
                     <bool>true</bool>
                    </property>
-                   <widget class="QWidget" name="scrollAreaWidgetContents_3">
+                   <widget class="QWidget" name="AlertHolder">
                     <property name="geometry">
                      <rect>
                       <x>0</x>
@@ -616,7 +616,7 @@
                       <height>307</height>
                      </rect>
                     </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_16">
+                    <layout class="QVBoxLayout" name="AlertList">
                      <item>
                       <widget class="Alert" name="Alert" native="true">
                        <property name="sizePolicy">
@@ -655,7 +655,7 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="QStackedWidget" name="stackedWidget_2">
+         <widget class="QStackedWidget" name="BaroTabs">
           <widget class="QWidget" name="BaroNA">
            <layout class="QVBoxLayout" name="verticalLayout_17">
             <item>
@@ -702,7 +702,7 @@
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_7">
         <item>
-         <widget class="QStackedWidget" name="stackedWidget_3">
+         <widget class="QStackedWidget" name="NightwaveTabs">
           <widget class="QWidget" name="NightwaveNA">
            <layout class="QHBoxLayout" name="horizontalLayout_8">
             <item>
@@ -1103,7 +1103,7 @@
              <property name="widgetResizable">
               <bool>true</bool>
              </property>
-             <widget class="QWidget" name="scrollAreaWidgetContents_4">
+             <widget class="QWidget" name="EventHolder">
               <property name="geometry">
                <rect>
                 <x>0</x>
@@ -1112,7 +1112,7 @@
                 <height>730</height>
                </rect>
               </property>
-              <layout class="QVBoxLayout" name="verticalLayout_31">
+              <layout class="QVBoxLayout" name="EventsList">
                <item>
                 <widget class="Event" name="Event" native="true">
                  <property name="sizePolicy">
@@ -1161,7 +1161,7 @@
              <property name="widgetResizable">
               <bool>true</bool>
              </property>
-             <widget class="QWidget" name="scrollAreaWidgetContents_5">
+             <widget class="QWidget" name="NewsHolder">
               <property name="geometry">
                <rect>
                 <x>0</x>
@@ -1170,7 +1170,7 @@
                 <height>730</height>
                </rect>
               </property>
-              <layout class="QVBoxLayout" name="verticalLayout_33">
+              <layout class="QVBoxLayout" name="NewsList">
                <item>
                 <widget class="NewsBlurb" name="NewsBlurb" native="true">
                  <property name="sizePolicy">
