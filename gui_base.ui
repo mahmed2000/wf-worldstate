@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Timers">
        <attribute name="title">
@@ -229,7 +229,7 @@
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_6">
                   <item>
-                   <widget class="QWidget" name="Fissure" native="true">
+                   <widget class="Fissure" name="Fissure" native="true">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                       <horstretch>0</horstretch>
@@ -242,63 +242,7 @@
                       <height>100</height>
                      </size>
                     </property>
-                    <layout class="QGridLayout" name="gridLayout_3">
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="FissureTier">
-                       <property name="font">
-                        <font>
-                         <pointsize>12</pointsize>
-                         <weight>75</weight>
-                         <bold>true</bold>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>Neo - T3</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="1">
-                      <widget class="QLabel" name="FissureTimer">
-                       <property name="font">
-                        <font>
-                         <weight>75</weight>
-                         <bold>true</bold>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>22m 14s</string>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="0">
-                      <widget class="QLabel" name="FissureNode">
-                       <property name="font">
-                        <font>
-                         <pointsize>10</pointsize>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>Ukko (Void)</string>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="1">
-                      <widget class="QLabel" name="FissureType">
-                       <property name="text">
-                        <string>Storm</string>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
+                    <layout class="QGridLayout" name="gridLayout_3"/>
                    </widget>
                   </item>
                  </layout>
@@ -343,7 +287,7 @@
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_8">
                   <item>
-                   <widget class="QWidget" name="Invasion" native="true">
+                   <widget class="Invasion" name="Invasion" native="true">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                       <horstretch>0</horstretch>
@@ -356,57 +300,7 @@
                       <height>100</height>
                      </size>
                     </property>
-                    <layout class="QGridLayout" name="gridLayout_4">
-                     <item row="0" column="1">
-                      <widget class="QLabel" name="Reward2">
-                       <property name="font">
-                        <font>
-                         <weight>75</weight>
-                         <bold>true</bold>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>3x Detonite Injector</string>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                       </property>
-                       <property name="wordWrap">
-                        <bool>true</bool>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="0" colspan="2">
-                      <widget class="QProgressBar" name="InvasionProgress">
-                       <property name="styleSheet">
-                        <string notr="true">QProgressBar {background-color:red;;border-color:red; border:0px}
-QProgressBar::chunk {background-color:blue;}</string>
-                       </property>
-                       <property name="value">
-                        <number>24</number>
-                       </property>
-                       <property name="textVisible">
-                        <bool>false</bool>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="Reward1">
-                       <property name="font">
-                        <font>
-                         <weight>75</weight>
-                         <bold>true</bold>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>3x Fieldron</string>
-                       </property>
-                       <property name="wordWrap">
-                        <bool>true</bool>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
+                    <layout class="QGridLayout" name="gridLayout_4"/>
                    </widget>
                   </item>
                  </layout>
@@ -741,7 +635,7 @@ QProgressBar::chunk {background-color:blue;}</string>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_16">
                      <item>
-                      <widget class="QWidget" name="Alert" native="true">
+                      <widget class="Alert" name="Alert" native="true">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                          <horstretch>0</horstretch>
@@ -754,41 +648,7 @@ QProgressBar::chunk {background-color:blue;}</string>
                          <height>100</height>
                         </size>
                        </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_6">
-                        <item>
-                         <widget class="QLabel" name="AlertReward">
-                          <property name="font">
-                           <font>
-                            <pointsize>10</pointsize>
-                            <weight>75</weight>
-                            <bold>true</bold>
-                           </font>
-                          </property>
-                          <property name="text">
-                           <string>Orokin Reactor Blueprint</string>
-                          </property>
-                          <property name="wordWrap">
-                           <bool>true</bool>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <widget class="QLabel" name="AlertTimer">
-                          <property name="font">
-                           <font>
-                            <weight>75</weight>
-                            <bold>true</bold>
-                           </font>
-                          </property>
-                          <property name="text">
-                           <string>2h 5s</string>
-                          </property>
-                          <property name="alignment">
-                           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                          </property>
-                         </widget>
-                        </item>
-                       </layout>
+                       <layout class="QHBoxLayout" name="horizontalLayout_6"/>
                       </widget>
                      </item>
                     </layout>
@@ -837,31 +697,14 @@ QProgressBar::chunk {background-color:blue;}</string>
           <widget class="QWidget" name="BaroData">
            <layout class="QGridLayout" name="gridLayout_6">
             <item row="0" column="0">
-             <widget class="QWidget" name="BaroItem" native="true">
+             <widget class="BaroItem" name="BaroItem" native="true">
               <property name="maximumSize">
                <size>
                 <width>250</width>
                 <height>250</height>
                </size>
               </property>
-              <layout class="QGridLayout" name="gridLayout_7">
-               <item row="0" column="0">
-                <widget class="QLabel" name="ItemName">
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>Prisma Grinlok</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-              </layout>
+              <layout class="QGridLayout" name="gridLayout_7"/>
              </widget>
             </item>
            </layout>
@@ -907,7 +750,7 @@ QProgressBar::chunk {background-color:blue;}</string>
                 <widget class="QWidget" name="NightwaveDaily1" native="true">
                  <layout class="QVBoxLayout" name="verticalLayout_19">
                   <item>
-                   <widget class="QLabel" name="ChallengeName">
+                   <widget class="QLabel" name="Daily1Name">
                     <property name="font">
                      <font>
                       <pointsize>13</pointsize>
@@ -924,7 +767,7 @@ QProgressBar::chunk {background-color:blue;}</string>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="ChallengeDesc">
+                   <widget class="QLabel" name="Daily1Desc">
                     <property name="text">
                      <string>Complete a Mission</string>
                     </property>
@@ -938,22 +781,134 @@ QProgressBar::chunk {background-color:blue;}</string>
                </item>
                <item>
                 <widget class="QWidget" name="NightwaveDaily2" native="true">
-                 <layout class="QVBoxLayout" name="verticalLayout_21"/>
+                 <layout class="QVBoxLayout" name="verticalLayout">
+                  <item>
+                   <widget class="QLabel" name="Daily2Name">
+                    <property name="font">
+                     <font>
+                      <pointsize>13</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Agent</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="Daily2Desc">
+                    <property name="text">
+                     <string>Complete a Mission</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                </item>
                <item>
                 <widget class="QWidget" name="NightwaveDaily3" native="true">
-                 <layout class="QVBoxLayout" name="verticalLayout_22"/>
+                 <layout class="QVBoxLayout" name="verticalLayout_20">
+                  <item>
+                   <widget class="QLabel" name="Daily3Name">
+                    <property name="font">
+                     <font>
+                      <pointsize>13</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Agent</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="Daily3Desc">
+                    <property name="text">
+                     <string>Complete a Mission</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                </item>
                <item>
                 <widget class="QWidget" name="NightwaveWeekly1" native="true">
-                 <layout class="QVBoxLayout" name="verticalLayout_23"/>
+                 <layout class="QVBoxLayout" name="verticalLayout_21">
+                  <item>
+                   <widget class="QLabel" name="Weekly1Name">
+                    <property name="font">
+                     <font>
+                      <pointsize>13</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Agent</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="Weekly1Desc">
+                    <property name="text">
+                     <string>Complete a Mission</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                </item>
                <item>
                 <widget class="QWidget" name="NightwaveWeekly2" native="true">
-                 <layout class="QVBoxLayout" name="verticalLayout_24"/>
+                 <layout class="QVBoxLayout" name="verticalLayout_22">
+                  <item>
+                   <widget class="QLabel" name="Weekly2Name">
+                    <property name="font">
+                     <font>
+                      <pointsize>13</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Agent</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="Weekly2Desc">
+                    <property name="text">
+                     <string>Complete a Mission</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                </item>
               </layout>
@@ -964,27 +919,167 @@ QProgressBar::chunk {background-color:blue;}</string>
               <layout class="QHBoxLayout" name="horizontalLayout_9">
                <item>
                 <widget class="QWidget" name="NightwaveWeekly3" native="true">
-                 <layout class="QVBoxLayout" name="verticalLayout_25"/>
+                 <layout class="QVBoxLayout" name="verticalLayout_23">
+                  <item>
+                   <widget class="QLabel" name="Weekly3Name">
+                    <property name="font">
+                     <font>
+                      <pointsize>13</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Agent</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="Weekly3Desc">
+                    <property name="text">
+                     <string>Complete a Mission</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                </item>
                <item>
                 <widget class="QWidget" name="NightwaveWeekly4" native="true">
-                 <layout class="QVBoxLayout" name="verticalLayout_26"/>
+                 <layout class="QVBoxLayout" name="verticalLayout_24">
+                  <item>
+                   <widget class="QLabel" name="Weekly4Name">
+                    <property name="font">
+                     <font>
+                      <pointsize>13</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Agent</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="Weekly4Desc">
+                    <property name="text">
+                     <string>Complete a Mission</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                </item>
                <item>
                 <widget class="QWidget" name="NightwaveWeekly5" native="true">
-                 <layout class="QVBoxLayout" name="verticalLayout_27"/>
+                 <layout class="QVBoxLayout" name="verticalLayout_25">
+                  <item>
+                   <widget class="QLabel" name="Weekly5Name">
+                    <property name="font">
+                     <font>
+                      <pointsize>13</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Agent</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="Weekly5Desc">
+                    <property name="text">
+                     <string>Complete a Mission</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                </item>
                <item>
                 <widget class="QWidget" name="NightwaveElite1" native="true">
-                 <layout class="QVBoxLayout" name="verticalLayout_28"/>
+                 <layout class="QVBoxLayout" name="verticalLayout_26">
+                  <item>
+                   <widget class="QLabel" name="Elite1Name">
+                    <property name="font">
+                     <font>
+                      <pointsize>13</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Agent</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="Elite1Desc">
+                    <property name="text">
+                     <string>Complete a Mission</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                </item>
                <item>
                 <widget class="QWidget" name="NightwaveElite2" native="true">
-                 <layout class="QVBoxLayout" name="verticalLayout_29"/>
+                 <layout class="QVBoxLayout" name="verticalLayout_27">
+                  <item>
+                   <widget class="QLabel" name="Elite2Name">
+                    <property name="font">
+                     <font>
+                      <pointsize>13</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Agent</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="Elite3Desc">
+                    <property name="text">
+                     <string>Complete a Mission</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                </item>
               </layout>
@@ -1036,7 +1131,7 @@ QProgressBar::chunk {background-color:blue;}</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_31">
                <item>
-                <widget class="QWidget" name="Event" native="true">
+                <widget class="Event" name="Event" native="true">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -1049,38 +1144,7 @@ QProgressBar::chunk {background-color:blue;}</string>
                    <height>100</height>
                   </size>
                  </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_11">
-                  <item>
-                   <widget class="QLabel" name="EventName">
-                    <property name="font">
-                     <font>
-                      <pointsize>12</pointsize>
-                      <weight>75</weight>
-                      <bold>true</bold>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>Thermia Fractures</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="EventTimer">
-                    <property name="font">
-                     <font>
-                      <weight>75</weight>
-                      <bold>true</bold>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>2d 15h 24m 9s</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
+                 <layout class="QHBoxLayout" name="horizontalLayout_11"/>
                 </widget>
                </item>
               </layout>
@@ -1125,7 +1189,7 @@ QProgressBar::chunk {background-color:blue;}</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_33">
                <item>
-                <widget class="QWidget" name="NewsBlurb" native="true">
+                <widget class="NewsBlurb" name="NewsBlurb" native="true">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -1138,49 +1202,7 @@ QProgressBar::chunk {background-color:blue;}</string>
                    <height>100</height>
                   </size>
                  </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_12">
-                  <item>
-                   <widget class="QLabel" name="NewsBlurbHyperLink">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                      <horstretch>3</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>11</pointsize>
-                      <underline>true</underline>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>&lt;a href=&quot;https://duckduckgo.com&quot;&gt;Devesteam blah blah&lt;/a&gt;</string>
-                    </property>
-                    <property name="wordWrap">
-                     <bool>true</bool>
-                    </property>
-                    <property name="openExternalLinks">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="NewsBlurbRelTimer">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                      <horstretch>1</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string>1d</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
+                 <layout class="QHBoxLayout" name="horizontalLayout_12"/>
                 </widget>
                </item>
               </layout>
@@ -1198,6 +1220,44 @@ QProgressBar::chunk {background-color:blue;}</string>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Fissure</class>
+   <extends>QWidget</extends>
+   <header>extra_widgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Invasion</class>
+   <extends>QWidget</extends>
+   <header>extra_widgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Alert</class>
+   <extends>QWidget</extends>
+   <header>extra_widgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>BaroItem</class>
+   <extends>QWidget</extends>
+   <header>extra_widgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Event</class>
+   <extends>QWidget</extends>
+   <header>extra_widgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>NewsBlurb</class>
+   <extends>QWidget</extends>
+   <header>extra_widgets</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
