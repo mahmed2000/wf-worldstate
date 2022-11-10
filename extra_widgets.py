@@ -1,6 +1,9 @@
 from PyQt5 import QtWidgets, QtGui, QtCore
 
 from datetime import datetime, timedelta
+import time
+
+utcoffset = time.time() - time.mktime(time.gmtime())
 
 class Fissure(QtWidgets.QWidget):
     def __init__(self, parent, fissure_info = {}, i = 0):
@@ -52,17 +55,18 @@ class Fissure(QtWidgets.QWidget):
     def update_gui(self):
         try:
             self.FissureTier.setText(f"{self.fissure_info['tier']} - T{self.fissure_info['tierNum']}")
-            self.update_timer(self)
+            self.update_timer()
             self.FissureNode.setText(f"{self.fissure_info['node']}")
             self.FissureType.setText(f"{'Steel Path' if self.fissure_info['isHard'] else ('Storm' if self.fissure_info['isStorm'] else '')}")
         except:
             pass
 
-    def udpdate_timer(self):
-        eta = datetime.strptime(self.fissure_info['expiry'], '%Y-%m-%dT%H:%M:%SZ') - datetime.now()
-        eta -= timedelta(microseconds=eta.microseconds)
-
-        self.FissureTimer.setText(f"{eta.seconds // 3600}h {(eta.seconds // 60) % 60}m {eta.seconds % 60}s")
+    def update_timer(self):
+        eta = round(time.mktime(time.strptime(self.fissure_info['expiry'], '%Y-%m-%dT%H:%M:%S.%fZ')) - time.time() + utcoffset)
+        if eta >= 0:
+            self.FissureTimer.setText(f"{str(eta // 3600) + 'h' if eta // 3600 > 0 else ''} {(eta // 60) % 60}m {eta % 60}s")
+        else:
+            self.FissureTimer.setText("Expired")
 
 
 class Invasion(QtWidgets.QWidget):
@@ -110,11 +114,12 @@ class Invasion(QtWidgets.QWidget):
 
     def update_gui(self):
         try:
-            faction_colors = {'Gineer': 'red', 'Corpus': 'blue', 'Infested': 'green'}
+            faction_colors = {'Grineer': 'red', 'Corpus': 'blue', 'Infested': 'green'}
             self.Reward1.setText(f"{self.invasion_info['attackerReward']['itemString']}")
             self.Reward2.setText(f"{self.invasion_info['defenderReward']['itemString']}")
             self.InvasionProgress.setStyleSheet(f'QProgressBar {{background-color:{faction_colors.get(self.invasion_info["defendingFaction"])};border-color:red; border:0px}}\nQProgressBar::chunk {{background-color:{faction_colors.get(self.invasion_info["attackingFaction"])};}}')
-        except:
+            self.update_progress()
+        except KeyError:
             pass
 
     def update_progress(self):
@@ -164,9 +169,11 @@ class Alert(QtWidgets.QWidget):
             pass
 
     def update_timer(self):
-        eta = datetime.strptime(self.alert_info['expiry'], '%Y-%m-%dT%H:%M:%SZ') - datetime.now()
-        eta -= deltatime(microseconds=eta.microseconds)
-        self.AlertTimer.setText(f'{eta.days}d {eta.seconds // 3600}h {(eta.seconds // 60) % 60}m {eta.seconds % 60}s')
+        eta = round(time.mktime(time.strptime(self.alert_info['expiry'], '%Y-%m-%dT%H:%M:%S.%fZ')) - time.time() + utcoffset)
+        if eta > 0:
+            self.AlertTimer.setText(f'{str(eta // 86400) + "d " if eta // 86400 > 0 else ""}{str((eta // 3600) % 24) + "h" if eta // 3600 > 0 else ""} {(eta // 60) % 60}m {eta % 60}s')
+        else:
+            self.AlertTimer.setText('Expired')
 
 class BaroItem(QtWidgets.QWidget):
     def __init__(self, parent, item_info = {}, i = 0):
@@ -239,9 +246,11 @@ class Event(QtWidgets.QWidget):
             pass
 
     def update_timer(self):
-        eta = datetime.strptime(self.event_info['expiry'], '%Y-%m-%dT%H:%M:%SZ') - datetime.now()
-        eta -= deltatime(microseconds=eta.microseconds)
-        self.EventTimer.setText(f'{eta.days}d {eta.seconds // 3600}h {(eta.seconds // 60) % 60}m {eta.seconds % 60}s')
+        eta = round(time.mktime(time.strptime(self.event_info['expiry'], '%Y-%m-%dT%H:%M:%S.%fZ')) - time.time() + utcoffset)
+        if eta > 0:
+            self.EventTimer.setText(f'{str(eta // 86400) + "d " if eta // 86400 > 0 else ""}{(eta // 3600) % 24}h')
+        else:
+            self.EventTimer.setText('Expired')
 
 class NewsBlurb(QtWidgets.QWidget):
     def __init__(self, parent, news_info = {}, i = 0):
@@ -293,10 +302,9 @@ class NewsBlurb(QtWidgets.QWidget):
             pass
 
     def update_timer(self):
-        eta = datetime.strptime(self.news_info['expiry'], '%Y-%m-%dT%H:%M:%SZ') - datetime.now()
-        eta -= deltatime(microseconds=eta.microseconds)
-        if abs(eta.days) >= 1:
-            self.NewsBlurbRelTimer.setText(f'{"Starts in " if eta.days > 0 else ""}{abs(eta.days)}')
+        eta = round(time.mktime(time.strptime(self.news_info['date'], '%Y-%m-%dT%H:%M:%S.%fZ')) - time.time() + utcoffset)
+        if abs(eta) // 86400 >= 1:
+            self.NewsBlurbRelTimer.setText(f'{"Starts in " if eta // 86400 > 0 else ""}{abs(eta) // 86400}d')
         else:
-            self.NewsBlurbRelTimer.setText(f'{"Starts in " if eta.seconds > 0 else ""}{abs(eta.seconds) // 3600}h {(abs(eta.seconds) // 60) % 60}m')
+            self.NewsBlurbRelTimer.setText(f'{"Starts in " if eta > 0 else ""}{(abs(eta) // 3600) % 24}h {(abs(eta) // 60) % 60}m')
 

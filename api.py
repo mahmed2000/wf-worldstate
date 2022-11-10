@@ -14,7 +14,7 @@ class WorldState():
 
         self.fissures = self.ws.get('fissures')
         self.invasions = self.ws.get('invasions')
-        self.sorties = self.ws.get('sorties')
+        self.sorties = self.ws.get('sortie')
         self.archon_hunt = self.ws.get('archonHunt')
         self.arbitration = self.ws.get('arbitration')
         self.alerts = self.ws.get('alerts')
