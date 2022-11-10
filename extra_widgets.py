@@ -3,7 +3,7 @@ from PyQt5 import QtWidgets, QtGui, QtCore
 from datetime import datetime, timedelta
 
 class Fissure(QtWidgets.QWidget):
-    def __init__(self, parent, fissure_info, i):
+    def __init__(self, parent, fissure_info = {}, i = 0):
         super().__init__(parent)
         self.i = str(i)
         self.fissure_info = fissure_info
@@ -44,16 +44,19 @@ class Fissure(QtWidgets.QWidget):
         self.FissureNode.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.FissureNode.setObjectName("FissureNode_" + self.i)
         self.gridLayout_3.addWidget(self.FissureNode, 1, 0, 1, 1)
-        self.FissureType = QtWidgets.QLabel(Fissure)
+        self.FissureType = QtWidgets.QLabel(self)
         self.FissureType.setAlignment(QtCore.Qt.AlignCenter)
         self.FissureType.setObjectName("FissureType_" + self.i)
         self.gridLayout_3.addWidget(self.FissureType, 1, 1, 1, 1)
 
     def update_gui(self):
-        self.FissureTier.setText(f"{self.fissure_info['tier']} - T{self.fissure_info['tierNum']}")
-        self.update_timer(self)
-        self.FissureNode.setText(f"{self.fissure_info['node']}")
-        self.FissureType.setText(f"{'Steel Path' if self.fissure_info['isHard'] else ('Storm' if self.fissure_info['isStorm'] else '')}")
+        try:
+            self.FissureTier.setText(f"{self.fissure_info['tier']} - T{self.fissure_info['tierNum']}")
+            self.update_timer(self)
+            self.FissureNode.setText(f"{self.fissure_info['node']}")
+            self.FissureType.setText(f"{'Steel Path' if self.fissure_info['isHard'] else ('Storm' if self.fissure_info['isStorm'] else '')}")
+        except:
+            pass
 
     def udpdate_timer(self):
         eta = datetime.strptime(self.fissure_info['expiry'], '%Y-%m-%dT%H:%M:%SZ') - datetime.now()
@@ -63,7 +66,7 @@ class Fissure(QtWidgets.QWidget):
 
 
 class Invasion(QtWidgets.QWidget):
-    def __init__(self, parent, invasion_info, i):
+    def __init__(self, parent, invasion_info = {}, i = 0):
         super().__init__(parent)
         self.i = str(i)
         self.invasion_info = invasion_info
@@ -78,7 +81,7 @@ class Invasion(QtWidgets.QWidget):
         self.setSizePolicy(sizePolicy)
         self.setMinimumSize(QtCore.QSize(0, 100))
         self.setObjectName("Invasion_" + self.i)
-        self.gridLayout_4 = QtWidgets.QGridLayout(self.Invasion)
+        self.gridLayout_4 = QtWidgets.QGridLayout(self)
         self.gridLayout_4.setObjectName("gridLayout_4_" + self.i)
         self.Reward2 = QtWidgets.QLabel(self)
         font = QtGui.QFont()
@@ -106,16 +109,19 @@ class Invasion(QtWidgets.QWidget):
         self.gridLayout_4.addWidget(self.Reward1, 0, 0, 1, 1)
 
     def update_gui(self):
-        faction_colors = {'Gineer': 'red', 'Corpus': 'blue', 'Infested': 'green'}
-        self.Reward1.setText(f"{self.invasion_info['attackerReward']['itemString']}")
-        self.Reward2.setText(f"{self.invasion_info['defenderReward']['itemString']}")
-        self.InvasionProgress.setStyleSheet(f'QProgressBar {{background-color:{faction_colors.get(self.invasion_info["defendingFaction"])};border-color:red; border:0px}}\nQProgressBar::chunk {{background-color:{faction_colors.get(self.invasion_info["attackingFaction"])};}}')
+        try:
+            faction_colors = {'Gineer': 'red', 'Corpus': 'blue', 'Infested': 'green'}
+            self.Reward1.setText(f"{self.invasion_info['attackerReward']['itemString']}")
+            self.Reward2.setText(f"{self.invasion_info['defenderReward']['itemString']}")
+            self.InvasionProgress.setStyleSheet(f'QProgressBar {{background-color:{faction_colors.get(self.invasion_info["defendingFaction"])};border-color:red; border:0px}}\nQProgressBar::chunk {{background-color:{faction_colors.get(self.invasion_info["attackingFaction"])};}}')
+        except:
+            pass
 
     def update_progress(self):
         self.InvasionProgress.setProperty('value', self.invasion_info['completion'])
 
 class Alert(QtWidgets.QWidget):
-    def __init__(self, parent, alert_info, i):
+    def __init__(self, parent, alert_info = {}, i = 0):
         super().__init__(parent)
         self.i = str(i)
         self.alert_info = alert_info
@@ -151,8 +157,11 @@ class Alert(QtWidgets.QWidget):
         self.horizontalLayout_6.addWidget(self.AlertTimer)
 
     def update_gui(self):
-        self.AlertReward.setText(self.alert_info['mission']['reward']['itemString'])
-        self.update_timer()
+        try:
+            self.AlertReward.setText(self.alert_info['mission']['reward']['itemString'])
+            self.update_timer()
+        except:
+            pass
 
     def update_timer(self):
         eta = datetime.strptime(self.alert_info['expiry'], '%Y-%m-%dT%H:%M:%SZ') - datetime.now()
@@ -160,7 +169,7 @@ class Alert(QtWidgets.QWidget):
         self.AlertTimer.setText(f'{eta.days}d {eta.seconds // 3600}h {(eta.seconds // 60) % 60}m {eta.seconds % 60}s')
 
 class BaroItem(QtWidgets.QWidget):
-    def __init__(self, parent, item_info, i):
+    def __init__(self, parent, item_info = {}, i = 0):
         super().__init__(parent)
         self.item_info = item_info
         self.i = str(i)
@@ -182,10 +191,13 @@ class BaroItem(QtWidgets.QWidget):
         self.gridLayout_7.addWidget(self.ItemName, 0, 0, 1, 1)
 
     def update_gui(self):
-        self.ItemName.setText(self.item_info['item'])
+        try:
+            self.ItemName.setText(self.item_info['item'])
+        except:
+            pass
 
 class Event(QtWidgets.QWidget):
-    def __init__(self, parent, event_info, i):
+    def __init__(self, parent, event_info = {}, i = 0):
         super().__init__(parent)
         self.event_info = event_info
         self.i = str(i)
@@ -220,8 +232,11 @@ class Event(QtWidgets.QWidget):
         self.horizontalLayout_11.addWidget(self.EventTimer)
 
     def update_gui(self):
-        self.EventName.setText(self.event_info['description'])
-        self.update_timer()
+        try:
+            self.EventName.setText(self.event_info['description'])
+            self.update_timer()
+        except:
+            pass
 
     def update_timer(self):
         eta = datetime.strptime(self.event_info['expiry'], '%Y-%m-%dT%H:%M:%SZ') - datetime.now()
@@ -229,7 +244,7 @@ class Event(QtWidgets.QWidget):
         self.EventTimer.setText(f'{eta.days}d {eta.seconds // 3600}h {(eta.seconds // 60) % 60}m {eta.seconds % 60}s')
 
 class NewsBlurb(QtWidgets.QWidget):
-    def __init__(self, parent, news_info, i):
+    def __init__(self, parent, news_info = {}, i = 0):
         super().__init__(parent)
         self.i = str(i)
         self.news_info = news_info
@@ -271,8 +286,11 @@ class NewsBlurb(QtWidgets.QWidget):
         self.horizontalLayout_12.addWidget(self.NewsBlurbRelTimer)
 
     def update_gui(self):
-        self.NewsBlurbHyperLink.setText(f'<a href=\"{self.news_info["link"]}\">{self.news_info["message"]}</a>')
-        self.update_timer()
+        try:
+            self.NewsBlurbHyperLink.setText(f'<a href=\"{self.news_info["link"]}\">{self.news_info["message"]}</a>')
+            self.update_timer()
+        except:
+            pass
 
     def update_timer(self):
         eta = datetime.strptime(self.news_info['expiry'], '%Y-%m-%dT%H:%M:%SZ') - datetime.now()
