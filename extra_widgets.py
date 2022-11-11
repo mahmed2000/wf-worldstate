@@ -302,9 +302,18 @@ class NewsBlurb(QtWidgets.QWidget):
             pass
 
     def update_timer(self):
-        eta = round(time.mktime(time.strptime(self.news_info['date'], '%Y-%m-%dT%H:%M:%S.%fZ')) - time.time() + utcoffset)
-        if abs(eta) // 86400 >= 1:
-            self.NewsBlurbRelTimer.setText(f'{"Starts in " if eta // 86400 > 0 else ""}{abs(eta) // 86400}d')
+        if self.news_info.get('startDate'):
+            eta = round(time.mktime(time.strptime(self.news_info.get('startDate'), '%Y-%m-%dT%H:%M:%S.%fZ')) - time.time() + utcoffset)
+            prefix = 'Starts in '
+        if self.news_info.get('endDate'):
+            eta = round(time.mktime(time.strptime(self.news_info.get('endDate'), '%Y-%m-%dT%H:%M:%S.%fZ')) - time.time() + utcoffset)
+            prefix = 'Ends in '
+            if eta < 0:
+                prefix = ''
         else:
-            self.NewsBlurbRelTimer.setText(f'{"Starts in " if eta > 0 else ""}{(abs(eta) // 3600) % 24}h {(abs(eta) // 60) % 60}m')
+            eta = round(time.mktime(time.strptime(self.news_info.get('date'), '%Y-%m-%dT%H:%M:%S.%fZ')) - time.time() + utcoffset)
+        if abs(eta) // 86400 >= 1:
+            self.NewsBlurbRelTimer.setText(f'{prefix if eta // 86400 > 0 else ""}{abs(eta) // 86400}d')
+        else:
+            self.NewsBlurbRelTimer.setText(f'{prefix if eta > 0 else ""}{(abs(eta) // 3600) % 24}h {(abs(eta) // 60) % 60}m')
 
